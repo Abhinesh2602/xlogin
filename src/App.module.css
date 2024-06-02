@@ -1,0 +1,6 @@
+.formStyles {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  gap: 1rem;
+}
