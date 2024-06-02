@@ -5,17 +5,25 @@ function App() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const [loginSuccesful, setLoginSuccesful] = useState(false);
+  const [loginFailed, setLoginFailed] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username === "user" && password === "password") {
       setLoginSuccesful(true);
+    } else {
+      setLoginFailed(true);
     }
   };
 
   return (
     <div>
       <h1>Login Page</h1>
+      {loginFailed && !loginSuccesful ? (
+        <h3>Invalid username or password</h3>
+      ) : (
+        ""
+      )}
       {loginSuccesful ? (
         <h3>Welcome, user!</h3>
       ) : (
